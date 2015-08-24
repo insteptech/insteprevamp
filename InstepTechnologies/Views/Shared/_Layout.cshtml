@@ -1,0 +1,257 @@
+﻿<!DOCTYPE html>
+
+<!--[if IE 7]>                  <html class="ie7 no-js" lang="en">     <![endif]-->
+<!--[if lte IE 8]>              <html class="ie8 no-js" lang="en">     <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="not-ie no-js" lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">  
+    <link href="https://plus.google.com/118017092330981401748" rel="publisher" />
+    <meta name="msvalidate.01" content="DEA51CAF00114CAB6AEB0B7B29EDCF48" />
+    <script type="text/javascript" async defer
+            src="https://apis.google.com/js/platform.js?publisherid=118017092330981401748">
+    </script>
+    
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+    @RenderSection("AdditionalMeta", false)
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <!--[if !lte IE 6]><!-->
+    <link rel="stylesheet" href="~/css/style.css" media="screen" />
+    <link href="~/css/style.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,300,800,700,400italic|PT+Serif:400,400italic" />
+
+    <link rel="stylesheet" href="~/css/fancybox.min.css" media="screen" />
+
+    <link rel="stylesheet" href="~/css/video-js.min.css" media="screen" />
+
+    <link rel="stylesheet" href="~/css/audioplayerv1.min.css" media="screen" />
+    <!--<![endif]-->
+    <!--[if lte IE 6]>
+        <link rel="stylesheet" href="//universal-ie6-css.googlecode.com/files/ie6.1.1.css" media="screen, projection">
+    <![endif]-->
+    <!-- HTML5 Shiv + detect touch events -->
+    <script src="~/js/modernizr.custom.js"></script>
+
+    <!-- HTML5 video player -->
+    <script src="~/js/video.min.js"></script>
+    <script>_V_.options.flash.swf = 'http://insteptechnologies.com/js/video-js.swf';</script>
+
+    <script>
+    (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+            (i[r].q = i[r].q || []).push(arguments)
+        }, i[r].l = 1 * new Date(); a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-53906602-1', 'auto');
+    ga('send', 'pageview');
+
+    </script>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-559e209400bc553d" async="async"></script>
+
+
+</head>
+<body>
+
+    <header id="header" class="container clearfix">
+
+        <a href="~/Home/index" id="logo">
+            <img src="~/img/logo.png" alt="SmartStart">
+        </a>
+
+        <nav id="main-nav">
+
+            <ul>
+                @if(ViewBag.PageName == "index")
+                {
+                <li class="current">
+                    <a data-description="Lets start" href="~/Home/index">Home</a>
+                </li>
+                }else{
+                     <li>
+                         <a data-description="Lets start" href="~/Home/index">Home</a>
+                </li>
+                }
+
+                @if (ViewBag.PageName == "aboutus")
+                {
+                    <li class="current">
+                        <a data-description="Who we are"  href="~/Home/aboutus">About us</a>
+                    </li>
+                }
+                else
+                {
+                      <li>
+                          <a data-description="Who we are" href="~/Home/aboutus">About us</a>
+                </li>
+                }
+
+                @if (ViewBag.PageName == "services")
+                {
+                    <li class="current">
+                        <a data-description="What we offer" href="~/Home/services">Services</a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a data-description="What we offer" href="~/Home/services">Services</a>
+                    </li>
+                }
+
+                @if (ViewBag.PageName == "Training")
+                {
+                    <li class="current">
+                        <a data-description="Learn with us" href="~/Home/training">Training</a>
+                        <ul style="display: none;">
+                            <li><a href="~/Home/trainingAngularjs">Angular JS</a></li>
+                            <li><a href="~/Home/trainingMicrosoft">Microsft Technologies</a></li>
+                            <li><a href="~/Home/trainingMean">MEAN Stack</a></li>
+                        </ul>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a data-description="Learn with us" href="~/Home/training">Training</a>
+                        <ul style="display: none;">
+                            <li><a href="~/Home/trainingAngularjs">Angular JS</a></li>
+                            <li><a href="~/Home/trainingMicrosoft">.net</a></li>
+                            <li><a href="~/Home/trainingMean">MEAN Stack</a></li>
+                        </ul>
+                    </li>
+                }
+       
+                @*@if (ViewBag.PageName == "blog")
+                {
+                    <li class="current">
+                        <a href="~/Home/blog" data-description="What we think">Blog</a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/Home/blog" data-description="enquire here">Blog</a>
+                    </li>
+                }*@
+
+                @if (ViewBag.PageName == "contact")
+                {
+                    <li class="current">
+                        <a data-description="Get in touch" href="~/Home/contact">Contact us</a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a data-description="Get in touch" href="~/Home/contact">Contact us</a>
+                    </li>
+                }
+            </ul>
+
+        </nav><!-- end #main-nav -->
+
+    </header><!-- end #header -->
+
+    <section id="content" class="container clearfix" itemscope itemtype="http://schema.org/Organization">
+
+        @RenderBody()
+        @RenderSection("SPAViews", required: false)
+
+    </section><!-- end #content -->
+
+    <footer id="footer" class="clearfix">
+
+        <div class="container">
+
+            <div class="three-fourth">
+
+                <nav id="footer-nav" class="clearfix">
+
+                    <ul>
+                        <li><a href="~/Home/index">Home</a></li>
+                        <li><a href="~/Home/aboutus">About us</a></li>
+                        <li><a href="~/Home/services">Services</a></li>
+                        @*<li><a href="~/Home/projects">Projects</a></li>*@
+                        <li><a href="~/Home/contact">Contact us</a></li>
+                    </ul>
+
+                </nav><!-- end #footer-nav -->
+
+                <ul class="contact-info">
+                    <li class="address">DSS 167, First Floor, Sector-25 panchkula, Haryana India</li>
+                    <li class="phone">(IN) +91 17 23 342678 </li>
+                    <li class="phone">(UK)+44-(0)-7429567121</li>
+                    <li class="email"><a href="mailto:office@insteptechnologies.com">office@insteptechnologies.com</a></li>
+                    <li class="skype"> skype:insteptechnologies</li>
+                </ul><!-- end .contact-info -->
+
+            </div><!-- end .three-fourth -->
+
+            <div class="one-fourth last">
+
+                <span class="title">Stay connected</span>
+                
+                <ul class="social-links">
+                    <li class="twitter"><a href="#">Twitter</a></li>
+                    <li class="facebook"><a href="#">Facebook</a></li>
+                    <li class="youtube"><a href="#">Linkedin</a></li>
+                    <li class="skype"><a href="#">Skype</a></li>
+                </ul><!-- end .social-links -->
+                <!-- Place this tag where you want the share button to render. -->
+                <div class="g-plus" data-action="share"></div>
+            </div><!-- end .one-fourth.last -->
+
+        </div><!-- end .container -->
+
+    </footer><!-- end #footer -->
+
+    <footer id="footer-bottom" class="clearfix">
+
+        <div class="container">
+
+            <ul>
+                <li>InStep Technologies &copy; 2014</li>
+                <li><a href="#">Legal Notice</a></li>
+                <li><a href="#">Terms</a></li>
+            </ul>
+
+        </div><!-- end .container -->
+
+    </footer><!-- end #footer-bottom -->
+    
+    <!--[if !lte IE 6]><!-->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/jquery-1.7.1.min.js"><\/script>')</script>
+    <!--[if lt IE 9]> <script src="js/selectivizr-and-extra-selectors.min.js"></script> <![endif]-->
+    <script src="~/js/respond.min.js"></script>
+    <script src="~/js/jquery.easing-1.3.min.js"></script>
+    <script src="~/js/jquery.fancybox.pack.js"></script>
+    <script src="~/js/jquery.smartStartSlider.min.js"></script>
+    <script src="~/js/jquery.jcarousel.min.js"></script>
+    <script src="~/js/jquery.cycle.all.min.js"></script>
+    <script src="~/js/jquery.isotope.min.js"></script>
+    <script src="~/js/audioplayerv1.min.js"></script>
+    <script src="//maps.google.com/maps/api/js?sensor=false"></script>
+    <script src="~/js/jquery.gmap.min.js"></script>
+    <script src="~/js/jquery.touchSwipe.min.js"></script>
+    <script src="~/js/custom.js"></script>
+    <!--<![endif]-->
+
+    <!--<![side bar]-->
+    
+</body>
+
+</html>
+

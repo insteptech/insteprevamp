@@ -1,0 +1,126 @@
+﻿@using InstepTechnologies.Models
+@model ContactModel
+
+@{
+    ViewBag.Title = "Contact us";
+}
+
+@section AdditionalMeta
+{
+    <title>Contact us | InStep Technologies</title>
+    <meta name="title" content="Contact Us | InStep Technologies" />
+    <meta name="keywords" content="SAP HANA, AngularJS, KnockOutJS, d3JS, ExpressJS, Oracle,.NET, MVC, WCF, Web API, Corporate Training, MS SQL Server, MongoDB, MySQL, Classic ASP, Entity Framework, CouchBase" />
+    <meta name="description" content="We'd love to hear from you" />
+}
+
+<h2>@ViewBag.Title.</h2>
+
+<div class="container clearfix">
+
+    <header class="page-header">
+
+        <h1 class="page-title">We'd love to hear from you</h1>
+
+    </header><!-- end .page-header -->
+
+</div><!-- end .container -->
+
+<section id="map">
+    <div id="map_canvas" style="height:350px;"></div>
+    <p class="container">Something went wrong... Try to enable your JavaScript!</p>
+</section><!-- end #map -->
+
+<div class="container clearfix" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+
+    <div class="one-fourth">
+
+        <h3>Contact Info</h3>
+
+        <h4>India</h4>
+        <p>
+            <img src='../img/maps/india.png' /><br>
+            DSS 167, First Floor<br />
+            Sector-25 panchkula, Haryana <br />
+            India
+        </p>
+
+        <p>
+            Phone: +91 86 99 953976
+            <br />
+            Email: office@insteptechnologies.com<br />
+            skype: insteptechnologies <br />
+            Web: insteptechnologies.com
+        </p>
+        <br />
+        <h4>United Kingdom</h4>
+        <p>
+            <img src='../img/maps/uk.png' /><br>
+            25 Osprey Road<br />
+            Birmingham <br />
+            B23 5JQ
+        </p>
+
+        <p>
+            Phone: +44-(0)-7429567121<br />
+            Email: office@insteptechnologies.com<br />
+            skype: insteptechnologies <br />
+            Web: insteptechnologies.com
+        </p>
+
+
+
+    </div><!-- end .one-fourth -->
+
+    <div class="three-fourth last">
+
+        <h3>Let's keep in touch</h3>
+        <h3 style="color:green!important;">@ViewBag.emailsent</h3>
+        @using (Html.BeginForm("contact", "Home", new { ReturnUrl = "contact" }, FormMethod.Post, new { @class = "contact-form", role = "form" }))
+        {
+            @Html.AntiForgeryToken()
+            <p class="input-block">
+                @Html.LabelFor(m => m.Name)
+                @Html.TextBoxFor(m => m.Name)
+                @Html.ValidationMessageFor(m => m.Name, "", new { @class = "text-danger" })
+            </p>
+
+            <p class="input-block">
+                @Html.LabelFor(m => m.Email)
+                @Html.TextBoxFor(m => m.Email)
+                @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
+            </p>
+
+            <p class="input-block">
+                @Html.LabelFor(m => m.Query)
+                @Html.DropDownListFor(m => m.Query, new SelectList(
+                  new List<Object>{
+                       new { value = "ASP.net" , text = "ASP.net"  },
+                       new { value = "AngularJs" , text = "AngularJs" },
+                       new { value = "Sql server" , text = "Sql server"},
+                       new { value = "Oracle" , text = "Oracle"},
+                       new { value = "MongoDB" , text = "MongoDB"},
+                       new { value = "other" , text = "other"}
+                    },
+                  "value",
+                  "text",
+                   2))
+                @Html.ValidationMessageFor(m => m.Query, "", new { @class = "text-danger" })
+            </p>
+
+            <p class="textarea-block">
+                @Html.LabelFor(m => m.Message)
+                @Html.TextAreaFor(m => m.Message, new { @Cols = "88", @Rows = "6" })
+                @Html.ValidationMessageFor(m => m.Message, "", new { @class = "text-danger" })
+            </p>
+
+            <div class="hidden">
+                <label for="contact-spam-check">Do not fill out this field:</label>
+                <input name="spam-check" type="text" value="" id="contact-spam-check" />
+            </div>
+
+            <input type="submit" value="submit" />
+        }
+        <div class="clear"></div>
+    </div><!-- end .three-fourth.last -->
+
+</div><!-- end .container -->
